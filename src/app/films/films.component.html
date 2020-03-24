@@ -1,0 +1,9 @@
+<h1> Films </h1>
+<!-- {{ films }} -->
+ {{ filmResponse?.count }}
+<ul>
+    <li *ngFor="let film of filmResponse?.results">        
+        <p>{{ film.title }}</p>
+    </li>
+
+</ul>
