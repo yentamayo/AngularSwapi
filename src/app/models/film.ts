@@ -1,22 +1,22 @@
-export interface IFilmResponse {
+export interface IFilmsResponse {
     count: number;
+    next: string;
+    previous: string;
     results: Film[];
 }
 
 export class Film {
-    name: string;
-    birth_year: string;
-    eye_color: string;
-    gender: string;
-    hair_color: string;
-    height: string;
-    mass: string;
-    skin_color: string;
-    homeworld: string;
-    films: any[];
+    title: string;
+    episode_id: string;
+    opening_crawl: string;
+    director: string;
+    producer: string;
+    release_date: string;
     species: any[];
     starships: any[];
     vehicles: any[];
+    characters: any[];
+    planets: any[];
     url: string;
     created: string;
     edited: string;

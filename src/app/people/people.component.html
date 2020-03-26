@@ -1,1 +1,28 @@
-<p>people works!</p>
+<h1>People</h1>
+
+<h3> Count: {{ peopleResponse?.count }} </h3>
+<a href="#">Previous : {{ peopleResponse?.previous}}</a>
+<a href="#">Next : {{ peopleResponse?.next}}</a>
+
+
+<div *ngIf="peopleResponse?.previous != undefined ">
+    <button (click)="getPreviousPeople($event,peopleResponse?.previous)" class="btn btn-primary"> PREVIOUS </button> 
+</div>
+
+    <div>
+    <button (click)="getNextPeople($event,peopleResponse?.next)" class="btn btn-primary"> NEXT </button>
+</div>
+
+<div class="row">
+    <table class="table">
+        <tr *ngFor="let person of peopleResponse?.results">
+            <td> {{ person.name }} </td>
+            <td> {{  person.films }}</td>
+            <td> {{ person.species }} </td>
+        </tr>
+    </table>
+</div>
+
+
+
+

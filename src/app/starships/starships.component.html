@@ -1,1 +1,24 @@
-<p>starships works!</p>
+<h1>Starships</h1>
+
+<h3>Count {{  starshipsResponse?.count }}</h3>
+<a href="#">Previous : {{ starshipsResponse?.previous}}</a>
+<a href="#">Next : {{ starshipsResponse?.next}}</a>
+
+
+<!-- <div *ngIf="starshipsResponse?.previous != undefined ">
+    <button (click)="getPreviousStarships($event,starshipsResponse?.previous)" class="btn btn-primary"> PREVIOUS </button> 
+</div>
+
+    <div>
+    <button (click)="getNextStarships($event,starshipsResponse?.next)" class="btn btn-primary"> NEXT </button>
+</div> -->
+<div class="row">
+    <table class="table">
+        <tr *ngFor="let starship of starshipsResponse?.results">
+            <td> {{ starship.name }}</td>
+            <td> {{ starship.model }}</td>
+            <td> {{ starship.starship_class }}</td>
+            <td> {{ starship.pilots }}</td>    
+        </tr>
+    </table>
+</div>

@@ -1,9 +1,21 @@
 <h1> Films </h1>
-<!-- {{ films }} -->
- {{ filmResponse?.count }}
-<ul>
+
+<h3>Count {{ filmResponse?.count }}</h3>
+
+<table class="table">
+    <tr  *ngFor="let film of filmResponse?.results">
+        <td>{{ film.title }}</td>
+        <td>{{ film.episode_id }}</td>
+        <td>{{ film.opening_crawl }}</td>
+        <td>{{ film.director }}</td>
+        <td>{{ film.producer }}</td>
+    </tr>
+</table>
+
+
+<!-- <ul>
     <li *ngFor="let film of filmResponse?.results">        
         <p>{{ film.title }}</p>
     </li>
 
-</ul>
+</ul> -->

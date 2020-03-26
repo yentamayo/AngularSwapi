@@ -1,1 +1,12 @@
-<p>planets works!</p>
+<h1>Planets</h1>
+
+<h3>Count {{ planetsResponse?.count }}</h3>
+
+<table class="table">
+    <tr *ngFor="let planet of planetsResponse?.results">
+        <td>{{  planet.name }}</td>
+        <td>{{  planet.diameter }}</td>
+        <td>{{  planet.rotation_period }}</td>
+        <td>{{  planet.orbital_period }}</td>
+    </tr>
+</table>

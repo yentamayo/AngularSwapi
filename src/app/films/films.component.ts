@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FilmService } from '../services/film.service';
 
-import { Film, IFilmResponse } from '../models/film';
+import { Film, IFilmsResponse } from '../models/film';
 
 @Component({
   selector: 'app-films',
@@ -10,25 +10,15 @@ import { Film, IFilmResponse } from '../models/film';
 })
 export class FilmsComponent implements OnInit {
 
-  films: Film[] = [];
-  filmResponse: IFilmResponse;
+  filmResponse: IFilmsResponse;
 
   constructor(private filmService: FilmService) { }
 
   ngOnInit() {
 
-    // this.data.getFilms().subscribe(data => {
-    //   this.films = data;
-    //   console.log(this.films);
-    // });
-
-    // this.filmService.getFilms().subscribe(films => {
-    //   this.films = this.films;
-    //   console.log(this.films);
-    // } );
-
     this.filmService.getFilms().subscribe(data => {
        this.filmResponse = data;
+      //  console.log(data)
     });
   }
 
